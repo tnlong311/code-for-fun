@@ -11,9 +11,3 @@ class Solution:
     Brief description of the method.
     """
     pass
-
-def main():
-    pass
-
-if __name__ == "__main__":
-    main()
