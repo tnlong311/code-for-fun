@@ -1,11 +1,12 @@
 """
 Author: Long Truong
-Date: 6 Jan 2025
+Start: 6 Jan 2025
+End: 4 Feb 2026
 Problem title: 11. Container With Most Water
 Url: https://leetcode.com/problems/container-with-most-water
 """
 
-# Brute force
+# # Brute force
 # class Solution:
 #   def maxArea(self, height: List[int]) -> int:
 #     re = 0
@@ -23,5 +24,27 @@ Url: https://leetcode.com/problems/container-with-most-water
 #     return re
 
 class Solution:
-  def maxArea(self, height: List[int]) -> int:
-    pass
+    def maxArea(self, height: List[int]) -> int:
+        n = len(height)
+        i = 0
+        j = n-1
+        max = 0
+
+        while i < j:
+            hi = height[i]
+            hj = height[j]
+
+            if hi > hj:
+                cur = hj * (j-i)
+                if cur > max:
+                    max = cur
+
+                j -= 1
+            else:
+                cur = hi * (j-i)
+                if cur > max:
+                    max = cur
+                i += 1
+        
+        return max
+        
